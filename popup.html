@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="ui.css" />
+    <title>标签休眠</title>
+  </head>
+  <body class="page-popup">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="32" height="32">
+            <rect width="32" height="32" rx="9" fill="#1f2430" />
+            <path d="M21.5 20.7A7.4 7.4 0 0 1 11.3 10.5a7.9 7.9 0 1 0 10.2 10.2Z" fill="#ffd98a" />
+            <circle cx="23.4" cy="9.6" r="1.1" fill="#ffd98a" />
+          </svg>
+        </span>
+        <div>
+          <h1 class="brand-title">标签休眠</h1>
+          <p class="brand-sub" id="summary">正在读取…</p>
+        </div>
+      </div>
+      <label class="switch" title="启用或暂停自动休眠">
+        <input type="checkbox" id="enabled" aria-label="启用自动休眠" />
+        <span class="track"></span>
+      </label>
+    </header>
+
+    <section class="stats" aria-label="标签统计">
+      <div class="stat">
+        <span class="stat-value" id="sleeping">–</span>
+        <span class="stat-label">已休眠</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="awake">–</span>
+        <span class="stat-label">未休眠</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="rule">–</span>
+        <span class="stat-label">休眠阈值</span>
+      </div>
+    </section>
+
+    <button class="btn btn-primary" id="scan" type="button">立即检查并休眠</button>
+    <p class="hint" id="hint">非激活标签闲置 5 分钟后自动休眠。</p>
+
+    <footer class="app-footer">
+      <a class="link" id="options-link" href="options.html">休眠时间与规则</a>
+      <span class="version" id="version"></span>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

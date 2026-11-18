@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="ui.css" />
+    <title>标签休眠设置</title>
+  </head>
+  <body class="page-options">
+    <h1 class="options-title">标签休眠设置</h1>
+    <p class="options-sub">标签休眠后仍保留在标签栏，点击时会重新加载。</p>
+
+    <form id="settings-form">
+      <section class="panel">
+        <div class="row">
+          <div>
+            <div class="row-title">自动休眠</div>
+            <div class="row-desc">关闭后不会自动休眠任何标签。</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="enabled" />
+            <span class="track"></span>
+          </label>
+        </div>
+        <div class="row">
+          <div>
+            <div class="row-title">非激活时长</div>
+            <div class="row-desc">标签离开激活状态超过该时长后休眠。</div>
+          </div>
+          <label class="minutes-input">
+            <input type="number" id="idle-minutes" min="1" max="240" step="1" inputmode="numeric" />
+            <span>分钟</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="row">
+          <div>
+            <div class="row-title">跳过固定标签</div>
+            <div class="row-desc">固定在标签栏的页面不会被休眠。</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="skip-pinned" />
+            <span class="track"></span>
+          </label>
+        </div>
+        <div class="row">
+          <div>
+            <div class="row-title">跳过发声标签</div>
+            <div class="row-desc">正在播放声音的页面不会被休眠。</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="skip-audible" />
+            <span class="track"></span>
+          </label>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">保存设置</button>
+        <span class="save-status" id="save-status" role="status"></span>
+      </div>
+    </form>
+
+    <script src="options.js"></script>
+  </body>
+</html>
